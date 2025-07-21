@@ -140,7 +140,7 @@ body {
 /* Header */
 .header {
  position: fixed; /* fiksiraj header da uvijek bude na vrhu */
-  top: 30px;
+  top: 0px;
   left: 0; right: 0;
   height: 70px;
   background: rgba(18,18,18,0.75);
@@ -677,6 +677,9 @@ h2 {
 
 /* Responsive za mobilni */
 @media (max-width: 400px) {
+  .header {
+    top: 30px;
+  }
    .top-bar-container {
     display: flex;
     flex-wrap: wrap;
