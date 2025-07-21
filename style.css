@@ -7,8 +7,10 @@
 }
 
 .top-bar {
+  position: relative;
   background: #fff; /* ili tamna pozadina ako želiš kontrast */
   font-size: 0.85rem;
+  z-index: 11000;
   color: #000;
 }
 
