@@ -679,14 +679,14 @@ h2 {
 @media (max-width: 400px) {
    .top-bar-container {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 3px;
     font-size: 0.65rem;
     padding: 4px 6px;
-    overflow: hidden;
-  }
+    /*overflow: hidden;
+*/  }
 
   .top-bar-item {
     display: flex;
@@ -704,7 +704,7 @@ h2 {
     display: flex;
     gap: 4px;
     white-space: nowrap;
-    flex-shrink: 0;
+    flex-shrink: 1;
   }
 
   .top-bar-socials a i {
