@@ -6,24 +6,53 @@
   box-sizing: border-box;
 }
 
-/* Top bar - tanka bijela trakica */
 .top-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 30px;
-  background: #fff;
-  transition: opacity 0.4s ease, height 0.4s ease;
-  overflow: hidden;
+  background: #fff; /* ili tamna pozadina ako želiš kontrast */
+  font-size: 0.85rem;
+  color: #000;
+}
+
+.top-bar-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 12px;
+}
+
+.top-bar-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 0 10px;
-  font-family: 'Bebas Neue', sans-serif;
+  gap: 6px;
+  white-space: nowrap;
   font-size: 0.85rem;
-  color: #121212;
-  z-index: 10001;
-  border-bottom: 1px solid #ccc;
 }
+
+.top-bar-item i {
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.top-bar-socials {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.top-bar-socials a {
+  color: #121212;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.top-bar-socials a:hover,
+.top-bar-socials a:focus {
+  color: #515151;
+  outline: none;
+}
+
 
 html, body {
   margin: 0;
@@ -71,65 +100,7 @@ html, body {
   background-color: black;
 }
 
-.top-bar img,
-.top-bar svg {
-  height: 16px;
-  width: auto;
-}
 
-.top-bar i {
-  font-size: 14px;
-  margin-right: 5px;
-}
-
-.top-bar.hidden {
-  opacity: 0;
-  height: 0;
-  pointer-events: none;
-}
-
-.top-bar-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  gap: 15px;
-}
-
-.top-bar-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.top-bar-item i {
-  color: #000000;
-  font-size: 1rem;
-}
-
-.top-bar-socials {
-  display: flex;
-  flex-direction: row;   
-  align-items: center;
-  gap: 8px;          
-}
-
-.top-bar-socials a {
-  color: #121212;
-  margin-left: 10px;
-  font-size: 1.0rem;
-  transition: color 0.3s ease;
-  text-decoration: none;
-}
-
-.top-bar-socials a:hover,
-.top-bar-socials a:focus {
-  color: #515151;
-  outline: none;
-}
 
 /* Body and base */
 body {
@@ -682,15 +653,14 @@ h2 {
 
 /* Responsive za mobilni */
 @media (max-width: 768px) {
-  .top-bar {
+  .top-bar-container {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
-    padding: 4px 8px;
   }
 
   .top-bar-item {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     gap: 4px;
   }
 
@@ -699,12 +669,14 @@ h2 {
   }
 
   .top-bar-socials {
-    gap: 4px;
+    justify-content: flex-start;
+    gap: 6px;
   }
 
   .top-bar-socials a {
     font-size: 0.85rem;
   }
+
   .hero-section {
     padding-top: 30px;  
   }
