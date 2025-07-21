@@ -144,3 +144,6 @@ const observer = new IntersectionObserver(entries => {
 
 images.forEach(img => observer.observe(img));
 
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+});
