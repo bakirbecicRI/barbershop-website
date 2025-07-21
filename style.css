@@ -140,7 +140,7 @@ body {
 /* Header */
 .header {
  position: fixed; /* fiksiraj header da uvijek bude na vrhu */
-  top: 0px;
+  top: 30px;
   left: 0; right: 0;
   height: 70px;
   background: rgba(18,18,18,0.75);
@@ -154,7 +154,7 @@ body {
 }
 
 .header.shift-up {
-  transform: translateY(-100px);
+  transform: translateY(-30px);
   padding-top: 0;
 }
 
