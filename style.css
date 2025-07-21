@@ -140,7 +140,7 @@ body {
 /* Header */
 .header {
  position: fixed; /* fiksiraj header da uvijek bude na vrhu */
-  top: 0;
+  top: 30px;
   left: 0; right: 0;
   height: 70px;
   background: rgba(18,18,18,0.75);
