@@ -139,6 +139,7 @@ body {
   align-items: center;
   padding: 0 15px;
   transition: top 0.3s ease;
+  margin-top: -70px;
 }
 
 .header.shift-up {
