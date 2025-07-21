@@ -9,14 +9,14 @@
 .top-bar {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 0; right: 0;
   height: 30px;
   line-height: 30px;
   background-color: #fff;
-  z-index: 11000;
+  color: #000;
   padding: 0 15px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  z-index: 11000;
   transition: top 0.3s ease;
 }
 .top-bar.hidden {
@@ -127,8 +127,8 @@ body {
 
 /* Header */
 .header {
-  position: relative;
-  padding-top: 30px;
+ position: fixed; /* fiksiraj header da uvijek bude na vrhu */
+  top: 0;
   left: 0; right: 0;
   height: 70px;
   background: rgba(18,18,18,0.75);
@@ -137,8 +137,8 @@ body {
   z-index: 10000;
   display: flex;
   align-items: center;
-  transition: top 0.4s ease;
-  padding: 0 20px;
+  padding: 0 15px;
+  transition: top 0.3s ease;
 }
 
 .header.shift-up {
