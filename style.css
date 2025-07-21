@@ -7,11 +7,20 @@
 }
 
 .top-bar {
-  position: relative;
-  background: #fff; /* ili tamna pozadina ako želiš kontrast */
-  font-size: 0.85rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  line-height: 30px;
+  background-color: #fff;
   z-index: 11000;
-  color: #000;
+  padding: 0 15px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  transition: top 0.3s ease;
+}
+.top-bar.hidden {
+  top: -30px; /* pomjeri traku izvan vidokruga gore */
 }
 
 .top-bar-container {
@@ -118,8 +127,8 @@ body {
 
 /* Header */
 .header {
-  position: fixed;
-  top: 30px;
+  position: relative;
+  padding-top: 30px;
   left: 0; right: 0;
   height: 70px;
   background: rgba(18,18,18,0.75);
@@ -133,7 +142,8 @@ body {
 }
 
 .header.shift-up {
-    top: 0;
+  transform: translateY(-30px);
+  padding-top: 0;
 }
 
 .btn-primary {
