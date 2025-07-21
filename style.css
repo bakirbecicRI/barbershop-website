@@ -110,6 +110,13 @@ html, body {
   font-size: 1rem;
 }
 
+.top-bar-socials {
+  display: flex;
+  flex-direction: row;   
+  align-items: center;
+  gap: 8px;          
+}
+
 .top-bar-socials a {
   color: #121212;
   margin-left: 10px;
@@ -675,6 +682,29 @@ h2 {
 
 /* Responsive za mobilni */
 @media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 4px 8px;
+  }
+
+  .top-bar-item {
+    font-size: 0.8rem;
+    gap: 4px;
+  }
+
+  .top-bar-item i {
+    font-size: 0.8rem;
+  }
+
+  .top-bar-socials {
+    gap: 4px;
+  }
+
+  .top-bar-socials a {
+    font-size: 0.85rem;
+  }
   .hero-section {
     padding-top: 30px;  
   }
@@ -730,24 +760,6 @@ h2 {
   box-shadow: none !important;
 }
 
-
-
-  .top-bar {
-    font-size: 0.5rem;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 2px;
-    padding: 2px 4px;
-    overflow: hidden;
-  }
-
-  .top-bar i,
-  .top-bar img,
-  .top-bar svg {
-    height: 10px;
-    font-size: 9px
-    max-width: 8px;
-  }
 
   .nav.active {
     transform: translateX(0);
