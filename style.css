@@ -716,8 +716,10 @@ h2 {
   .hero-section {
     padding-top: 30px;  
   }
-  body {
+  html, body {
     padding-top: 98px;
+    overflow-x: clip;
+    max-width: 100%;
   }
   .contact-section {
     padding: 20px;
