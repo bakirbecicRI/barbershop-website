@@ -678,8 +678,8 @@ h2 {
 /* Responsive za mobilni */
 @media (max-width: 400px) {
   .hero-logo {
-  position: relative;
-  top: 60px; 
+  text-align: center;
+  margin-top: 60px; 
 }
   .header {
     top: 30px;
@@ -718,7 +718,7 @@ h2 {
     font-size: 0.7rem;
   }
   .hero-section {
-    padding-top: 0;
+    padding-top: 10px;
   }
   html, body {
     padding-top: 0px;
