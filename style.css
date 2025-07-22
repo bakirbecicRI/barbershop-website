@@ -677,6 +677,10 @@ h2 {
 
 /* Responsive za mobilni */
 @media (max-width: 400px) {
+  .hero-logo {
+  position: relative;
+  top: 60px; 
+}
   .header {
     top: 30px;
   }
