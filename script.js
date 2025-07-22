@@ -1,3 +1,4 @@
+// ==== NAVIGACIJA ====
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('nav');
 
@@ -18,7 +19,6 @@ function toggleMenu() {
 }
 
 hamburger.addEventListener('click', toggleMenu);
-
 hamburger.addEventListener('keydown', e => {
   if (e.key === 'Enter' || e.key === ' ') {
     e.preventDefault();
@@ -36,6 +36,7 @@ document.addEventListener('click', e => {
   }
 });
 
+// ==== HEADER SHRINK ====
 const topBar = document.querySelector('.top-bar');
 const header = document.querySelector('.header');
 
@@ -43,42 +44,33 @@ window.addEventListener('scroll', () => {
   if (window.scrollY > 10) {
     topBar.classList.add('hidden');
     header.classList.add('shift-up');
-    //document.body.style.paddingTop = '70px';  // padding za header
   } else {
     topBar.classList.remove('hidden');
     header.classList.remove('shift-up');
-    //document.body.style.paddingTop = '100px'; // padding za top-bar + header
   }
 });
 
+// ==== SCROLL TO TOP ====
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+window.addEventListener("scroll", () => {
+  scrollToTopBtn.style.display =
+    window.scrollY > 300 ? "block" : "none";
+});
 
-  window.onscroll = function () {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      scrollToTopBtn.style.display = "block";
-    } else {
-      scrollToTopBtn.style.display = "none";
-    }
-  };
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-  scrollToTopBtn.onclick = function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+// ==== SECTIONS FADE-IN ====
+const fadeSections = document.querySelectorAll('main > section');
 
-
-
-// Fade in efekat sekcija na scroll - jedan po jedan
 function revealSections() {
-  const sections = document.querySelectorAll('main > section');
   const triggerBottom = window.innerHeight * 0.85;
-
-  sections.forEach(section => {
+  fadeSections.forEach(section => {
     const sectionTop = section.getBoundingClientRect().top;
     if (sectionTop < triggerBottom) {
-      if (!section.classList.contains('visible')) {
-        section.classList.add('visible');
-      }
+      section.classList.add('visible');
     }
   });
 }
@@ -86,7 +78,7 @@ function revealSections() {
 window.addEventListener('scroll', revealSections);
 window.addEventListener('load', revealSections);
 
-// Slider galerija
+// ==== SLIDER ====
 const sliderTrack = document.querySelector('.slider-track');
 const slides = document.querySelectorAll('.slider-track img');
 const prevBtn = document.querySelector('.slider-btn.prev');
@@ -95,8 +87,8 @@ const nextBtn = document.querySelector('.slider-btn.next');
 let currentIndex = 0;
 
 function updateSlider() {
-const slideWidth = slides[0].offsetWidth;
-sliderTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  const slideWidth = slides[0].offsetWidth;
+  sliderTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
 
 prevBtn.addEventListener('click', () => {
@@ -105,33 +97,31 @@ prevBtn.addEventListener('click', () => {
 });
 
 nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+  currentIndex = (currentIndex + 1) % slides.length;
   updateSlider();
 });
 
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".nav a");
+// ==== SCROLLSPY ====
+const navSections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav a");
 
-  window.addEventListener("scroll", () => {
-    let current = "";
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (pageYOffset >= sectionTop - sectionHeight / 2) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active");
-      }
-    });
+window.addEventListener("scroll", () => {
+  let current = "";
+  navSections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop - sectionHeight / 2) {
+      current = section.getAttribute("id");
+    }
   });
 
-  const images = document.querySelectorAll('.gallery-image');
+  navLinks.forEach((link) => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
+  });
+});
+
+// ==== GALLERY FADE-IN ====
+const images = document.querySelectorAll('.gallery-image');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -143,7 +133,3 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 
 images.forEach(img => observer.observe(img));
-
-window.addEventListener('load', () => {
-  window.scrollTo(0, 0);
-});
