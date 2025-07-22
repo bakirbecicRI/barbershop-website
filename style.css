@@ -714,10 +714,10 @@ h2 {
     font-size: 0.7rem;
   }
   .hero-section {
-    margin-top: -100px; 
+    padding-top: 0;
   }
   html, body {
-    padding-top: 98px;
+    padding-top: 0px;
     overflow-x: clip;
     max-width: 100%;
   }
