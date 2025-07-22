@@ -792,6 +792,12 @@ h2 {
     max-width: 100%;
   }
   .contact-section {
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.92)),
+    url('img/slk8.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     padding: 20px;
     width: 100vw; 
     margin: 0;    
