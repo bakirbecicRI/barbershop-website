@@ -734,6 +734,19 @@ h2 {
 
 /* Responsive za mobilni */
 @media (max-width: 400px) {
+  .hero-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+    url("img/slk14.jpg") no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding-top: 60px;
+  user-select: none;
+}
    .footer-content {
     flex-direction: column;
     align-items: center;
