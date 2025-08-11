@@ -1,4 +1,3 @@
-// ==== NAVIGACIJA ====
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('nav');
 
@@ -36,7 +35,6 @@ document.addEventListener('click', e => {
   }
 });
 
-// ==== HEADER SHRINK ====
 const topBar = document.querySelector('.top-bar');
 const header = document.querySelector('.header');
 
@@ -50,7 +48,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// ==== SCROLL TO TOP ====
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
 window.addEventListener("scroll", () => {
@@ -62,7 +59,6 @@ scrollToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// ==== SECTIONS FADE-IN ====
 const fadeSections = document.querySelectorAll('main > section');
 
 function revealSections() {
@@ -78,7 +74,6 @@ function revealSections() {
 window.addEventListener('scroll', revealSections);
 window.addEventListener('load', revealSections);
 
-// ==== SLIDER ====
 const sliderTrack = document.querySelector('.slider-track');
 const slides = document.querySelectorAll('.slider-track img');
 const prevBtn = document.querySelector('.slider-btn.prev');
@@ -101,7 +96,6 @@ nextBtn.addEventListener('click', () => {
   updateSlider();
 });
 
-// ==== SCROLLSPY ====
 const navSections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav a");
 
@@ -120,7 +114,6 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// ==== GALLERY FADE-IN ====
 const images = document.querySelectorAll('.gallery-image');
 
 const observer = new IntersectionObserver(entries => {
